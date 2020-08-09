@@ -1,0 +1,14 @@
+
+<%- include("header"); -%>
+    <p class="quote"> "Poetry is an act of peace" - Pablo Neruda</p>
+<p class="posts">Here begins the journey of my poems.....</p>
+<div class="posts">
+  <%  for(var i=postarr.length-1; i>=0; i--){ %>
+  <a href="/posts/<%=postarr[i]._id%>">  <img src="/uploads/<%= postarr[i].imageName %>" alt="Error" class="postImage"> </a>
+    <h1 style="padding: 0 0 80px;"> <a href="/posts/<%=postarr[i]._id%>" class="poemTitle"> <%=postarr[i].title%> </a> </h1>
+    <hr>
+    <% } %>
+
+</div>
+
+<%- include("footer"); -%>

@@ -1,0 +1,32 @@
+<%- include("header"); -%>
+<div class="posts" style="padding-top: 30px;">
+  <img src="/uploads/<%= imageName %>" alt="" class="postImage">
+    <h1><%=title%></h1>
+  <pre class="posts">  <p style="padding: 20px 0 40px;">  <%=content%></p></pre>
+
+</div>
+
+<hr class="new">
+
+<p class="comments">Leave Behind Your Thoughts :)</p>
+<%comments.forEach(function(comment){%>
+  <div class="">
+    <p class="comment-name"><strong><%= comment.name %></strong></p>
+    <p class="comment-comment"><%= comment.comment %></p>
+  </div>
+  <hr>
+<%})%>
+
+<form class="" action="/posts/<%=postID%>" method="post">
+  <div class="form-group">
+    <label class="compose" style="font-size: 20px;"> Name</label>
+    <input type="text" name="Name" value="" class="newtitle form-control" autocomplete="off">
+    <label class="compose" style="font-size: 20px;">Your Thoughts...</label>
+    <textarea name="Comment" rows="4" cols="80" class="newcontent form-control" placeholder="Write Something..." required></textarea>
+  </div>
+<button class="publishButton" type="submit" name="button">Done!</button>
+
+</form>
+
+
+<%- include("footer"); -%>
